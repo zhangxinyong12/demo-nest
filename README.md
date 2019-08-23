@@ -73,3 +73,37 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
   Nest is [MIT licensed](LICENSE).
+
+## commitlint
+### Commit message格式
+  ```
+  <type>: <subject>
+  ```
+  注意冒号后面有空格。
+### type
+  - feat：新功能（feature）
+  - fix：修补bug
+  - docs：文档（documentation）
+  - style： 格式（不影响代码运行的变动）
+  - refactor：重构（即不是新增功能，也不是修改bug的代码变动）
+  - test：增加测试
+  - chore：构建过程或辅助工具的变动
+### subject
+subject是 commit 目的的简短描述，不超过50个字符，且结尾不加句号（.）。
+### 安装
+```
+npm install  @commitlint/cli @commitlint/config-conventional --save-dev
+```
+### husky 
+```
+npm install husky --save-dev
+```
+package.json
+```
+"husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+```
