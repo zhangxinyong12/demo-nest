@@ -10,7 +10,6 @@ import { ForbiddenException } from './../exception/forbidden-exception';
 import { HttpExceptionFilter } from './../filter/http-exception.filter';
 import { ValidationPipe } from '../pipe/validation.pipe';
 
-
 // 全局 整个cats
 @UseFilters(new HttpExceptionFilter())
 @Controller('cats')

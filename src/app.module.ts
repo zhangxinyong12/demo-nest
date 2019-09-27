@@ -5,8 +5,12 @@ import { CatsModule } from './cats/cats.module';
 import { LoggerMiddleware } from './middleware/logger.middleware';
 import { CatsController } from './cats/cats.controller';
 
+import { MongooseModule } from '@nestjs/mongoose';
 @Module({
-  imports: [CatsModule],
+  imports: [
+    MongooseModule.forRoot('mongodb://47.105.105.165:27017/nest'),
+    CatsModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
