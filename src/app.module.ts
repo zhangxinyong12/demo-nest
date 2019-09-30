@@ -8,7 +8,12 @@ import { CatsController } from './cats/cats.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://47.105.105.165:27017/nest'),
+    MongooseModule.forRoot('mongodb://zhangNest:zhang123@47.105.105.165:27017/nest?authSource=admin',
+      // MongooseModule.forRoot('mongodb://47.105.105.165:27017/nest',
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }),
     CatsModule,
   ],
   controllers: [AppController],
